@@ -1,4 +1,4 @@
 <?php
-function classAutoLoader($classname) {
-    include_once "./classes/" . $classname . ".php";
+function classAutoLoader($className) {
+    include_once "./classes/" . $className . ".php";
 }
