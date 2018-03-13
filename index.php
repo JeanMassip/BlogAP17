@@ -15,10 +15,6 @@ spl_autoload_register('classAutoLoader');
 <?php
 include "./includes/header.php";
 
-$test = new Queries();
-var_dump($test);
-
-
 $page = $_GET['page'] ?? "";
 $page = "./includes/" . $page . ".inc.php";
 

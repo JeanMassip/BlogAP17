@@ -3,8 +3,8 @@ class Queries
 {
     // DSN : Data Source Name
     private $dsn = "mysql:dbname=ap;host=localhost;charset=utf8";
-    private $user = "ap";
-    private $password = "ap";
+    private $user = "ap_admin";
+    private $password = "1234";
     private $db;
 
     function __construct()

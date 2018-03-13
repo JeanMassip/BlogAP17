@@ -26,11 +26,13 @@ if (isset($_POST['frmRegistration'])) {
 
         echo $message;
         include "frmRegistration.php";
-    }
-
-    else {
+    } else {
         //Injection en BDD
-        echo "Pas d'erreur";
+        $res = new Queries();
+        $password = sha1($password);
+        $sql = "INSERT INTO t_users(usernom, userprenom, usermail, userpassword, id_groupe) VALUES ('$name','$firstName','$mail','$password')";
+        $res->insert($sql);
+        echo "<p>Inscription reussie !</p>";
     }
 
 }
