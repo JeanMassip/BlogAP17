@@ -65,16 +65,17 @@ if(!isset($_SESSION["userId"])){
                 echo "<p>Modification reussie !</p>";
                 break;
             case "Changer Mot de Passe":
-                $sql = "SELECT usepassword FROM t_users WHERE id = '" . $_SESSION["userId"] . "'";
+                $sql = "SELECT usepassword FROM t_users WHERE id_users = '" . $_SESSION["userId"] . "'";
                 $query = $res->select($sql);
-                $fetch = $query->fetch();
-                if($fetch->usepassword == sha1($_POST["oldPassword"])){
-                    $sql = "UPDATE t_users SET usepassword = '". $_POST["newPassword"] ."'";
+                $result = $query->fetch();
+                $newPassword = sha1($_POST["newPassword"]);
+                if($result->usepassword == sha1($_POST["oldPassword"])){
+                    $sql = "UPDATE t_users SET usepassword = '$newPassword'";
                     $res->insert($sql);
                     echo "<p>Modification reussie !</p>";
                 }
                 break;
-            case "Logo out":
+            case "Log out":
                 session_unset();
                 session_destroy();
                 echo "<p>Logged out !</p>";
