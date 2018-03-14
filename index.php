@@ -1,6 +1,8 @@
 <?php
+session_start();
 include "./functions/classAutoLoader.php";
 spl_autoload_register('classAutoLoader');
+var_dump($_SESSION);
 ?>
 <!DOCTYPE html>
 <html lang="fr-FR">
@@ -30,5 +32,6 @@ else
 include "./includes/footer.php";
 ?>
 </div>
+<script src="./assets/JS/index.js";></script>
 </body>
 </html>
