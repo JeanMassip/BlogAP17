@@ -6,8 +6,6 @@
         $sql = "SELECT id_users FROM t_users WHERE usetoken = '$usetoken'";
         $fetch = $res->select($sql);
         $id = $fetch->fetch();
-        $message;
-
         if($id !=false){
             $sql = "UPDATE t_users SET usemailvalid = '1' WHERE id_users = '$id->id_users'";
             $res->insert($sql);
